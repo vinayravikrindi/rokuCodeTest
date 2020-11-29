@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component name="GridScreenPage" extends="Group"  initialFocus="RowList">
+    <script type="text/brightscript" uri="GridScreenPage.brs" />
+	 <interface>
+        <!-- Specifies the content for the Grid -->
+        <field id="content" type="node" alias="RowList.content" />
+        <field id="rowItemSelected" type="intarray" alwaysnotify="true" alias="RowList.rowItemSelected" />
+        <field id="jumpToRowItem" type="intarray" alias="RowList.jumpToRowItem" />
+    </interface>
+    <children>
+
+    <!-- Thumbnail poster -->
+        <Poster
+            id="thumbnailPoster"
+            loadDisplayMode="scaleToFit"
+            width="1000"
+            loadWidth="1000"
+            height="500"
+            loadHeight="500"
+            translation="[400,0]"
+        />
+        <!-- overlay background -->
+        <Poster
+            uri="pkg:/images/customOverlay.png"
+            loadDisplayMode="scaleToFit"
+            width="1280"
+            loadWidth="1280"
+            height="720"
+            loadHeight="720"
+            translation="[0,0]"
+        />
+         <!-- Label with title and length of content -->
+       <Label
+	        id="titleLabel"
+	        width="500"
+			translation="[130,120]"
+            >
+            <Font
+                role="font"
+                uri="pkg:/fonts/AvenirNextBold/AvenirNext-Bold.ttf"
+                size="35"/> 
+        </Label>
+        <!-- Lable for the release date of the video -->
+        <Label
+	        id="releaseDate"
+	        width="300"
+			translation="[130,190]"
+            >
+            <Font
+                role="font"
+                uri="pkg:/fonts/Avenir/Avenir-Medium.ttf"
+                size="20"/> 
+        </Label>
+        <!-- Lable for the quality of the video -->
+        <Label
+	        id="quality"
+	        width="100"
+			translation="[280,190]"
+            >
+            <Font
+                role="font"
+                uri="pkg:/fonts/AvenirNextBold/AvenirNext-Bold.ttf"
+                size="18"/> 
+        </Label>
+
+        <!-- Label with description of content.
+	         wrap="true" and numLines="3" means that the text can be broken into three lines -->
+        <Label
+	        id="descriptionLabel"
+	        wrap="true"
+	        width="510"
+	        numLines="3"
+			translation="[130,220]">
+            <Font
+                role="font"
+                uri="pkg:/fonts/Avenir/Avenir-Heavy.ttf"
+                size="20"/> 
+        </Label>
+        <!-- Lable for genre of the video -->
+        <Label
+	        id="genre"
+	        width="100"
+			translation="[130,320]"
+            >
+            <Font
+                role="font"
+                uri="pkg:/fonts/AvenirNextBold/AvenirNext-BoldItalic.ttf"
+                size="15"/> 
+        </Label>
+        <RowList
+            itemComponentName="RowListItemComponent"
+            id="rowList"
+            translation="[80,350]"
+            numRows="2"
+            rowitemSize="[[320,180]]"
+            rowItemSpacing="[[20,0]]"
+            itemSize="[1100,270]"
+            rowLabelOffset="[[50,20]]"
+            focusXOffset="[50]"
+            showRowLabel="[true]"
+            rowFocusAnimationStyle="floatingfocus"
+        />
+    </children>
+</component>

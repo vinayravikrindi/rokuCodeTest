@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component name="MainScene" extends="Scene">
+
+<interface>
+        <field id="inputArgs" type="assocarray" onChange="OnInputDeepLinking" />
+        <field id="launchArgs" type="assocarray" />
+    </interface>
+    
+    <script type="text/brightscript" uri="MainScene.brs" />
+    <script type="text/brightscript" uri="UILogic/ScreenStack.brs" />
+    <script type="text/brightscript" uri="UILogic/ContentTask.brs" />
+    <script type="text/brightscript" uri="UILogic/GridScreen.brs" />
+    <script type="text/brightscript" uri="UILogic/VideoPlayer.brs" />
+    <script type="text/brightscript" uri="UILogic/DetailsScreen.brs" />
+    <script type="text/brightscript" uri="UILogic/DeepLinking.brs" />
+    <children>
+         <!-- LoadingIndicator should be visible only in case of waiting for content -->
+
+         <Poster
+            uri="pkg:/images/background.jpg"
+            loadDisplayMode="scaleToFit"
+            width="1220"
+            loadWidth="1220"
+            height="700"
+            loadHeight="700"
+            opacity="0.3"
+        />
+       <Poster
+            id="loadingIndicator"
+                uri="pkg:/images/loader.png"
+                width="0.0"
+                height="0.0"
+                translation="[600,350]" />    
+    </children>
+</component>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component name="RowListItemComponent" extends="Group" xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+    <interface>
+      <field id="itemContent" type="node" onChange="OnContentSet" />
+    </interface>
+    <script type="text/brightscript" uri="RowListItem.brs" />
+    <children>
+        <!-- Set loadWidth/loadHeight and loadDisplayMode for better performance -->
+        <Poster
+            id="poster"
+            loadDisplayMode="scaleToFit"
+            width="300"
+            loadWidth="300"
+            height="160"
+            loadHeight="160"
+        />
+
+        <Poster
+            uri="pkg:/images/bottomgradient.png"
+            loadDisplayMode="scaleToFit"
+            width="300"
+            loadWidth="300"
+            height="85"
+            loadHeight="85"
+            translation="[0,90]"
+       />
+     <!-- Label with title and length of content -->
+        <Label
+        id="bottomTitle"
+        width="290"
+        height="60"
+        wrap="true"
+        translation="[20,150]"
+        >
+        <Font
+            role="font"
+            uri="pkg:/fonts/Avenir/Avenir-Roman.ttf"
+            size="25"/> 
+        </Label>
+    </children>
+</component>
